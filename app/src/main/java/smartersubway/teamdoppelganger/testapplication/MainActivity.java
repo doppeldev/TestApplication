@@ -1,7 +1,6 @@
 package smartersubway.teamdoppelganger.testapplication;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -10,28 +9,18 @@ import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
 import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
 import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
-import java.net.HttpCookie;
-import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
-import java.util.Map;
 
-import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends Activity {
 
@@ -85,7 +74,7 @@ public class MainActivity extends Activity {
         }
 
 
-        String url = "https://alpha-booking.payco.com/beauty/map?latitude=37.551865&longitude=127.089672&targetType=self&channel=subway";
+        String url = "http://www.nate.com";
         String cookieString = CookieManager.getInstance().getCookie(url);
         if (cookieString != null) {
             System.out.println("parkTest = "+cookieString);
@@ -93,7 +82,6 @@ public class MainActivity extends Activity {
         }
 
         webView.loadUrl(url);
-
 
         webView.setDownloadListener(new DownloadListener() {
             @Override
